@@ -9,40 +9,72 @@
 <body>
     <div class="container">
         <h1>Formulário de Gestão Escolar</h1>
-        <form id="forumlarioAluno" accept-charset="UTF-8">
+        <form id="formularioAluno" accept-charset="UTF-8">
             <div id="alunosContainer">
-                <table>
-                    <th>
-                        <input type="text" id="input_nome" placeholder="Nome">
-                    </th>
-                    <th>
-                        <input type="text" id="input_ra" placeholder="RA">
-                    </th>
-                    <th>
-                        <input type="text" id="input_email" placeholder="E-mail">
-                    </th>
-                    <th>
-                        <input type="text" id="input_prova_1" placeholder="Prova 1">
-                    </th>
-                    <th>
-                        <input type="text" id="input_prova_integrada_1" placeholder="Prova Integrada 1">
-                    </th>
-                    <th>
-                        <input type="text" id="input_aep_1" placeholder="AEP 1">
-                    </th>
-                    <th>
-                        <input type="text" id="input_prova_2" placeholder="Prova 2">
-                    </th>
-                    <th>
-                        <input type="text" id="input_prova_integrada_2" placeholder="Prova Integrada 2">
-                    </th>
-                    <th>
-                        <input type="text" id="input_aep_1" placeholder="AEP 2">
-                    </th>
+                <table id="alunosTable">
+                    <thead>
+                        <tr> <!-- Cria um cabeçalho -->
+                            <th>Nome</th>
+                            <th>RA</th>
+                            <th>E-mail</th>
+                            <th>Prova 1</th>
+                            <th>Prova Integrada 1</th>
+                            <th>AEP 1</th>
+                            <th>Média 1</th>
+                            <th>Prova 2</th>
+                            <th>Prova Integrada 2</th>
+                            <th>AEP 2</th>
+                            <th>Média 2</th>
+                            <th>Média Final</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <th>
+                            <input type="text" id="input_nome" placeholder="Nome" required>
+                        </th>
+                        <th>
+                            <input type="text" id="input_ra" placeholder="RA" required>
+                        </th>
+                        <th>
+                            <input type="text" id="input_email" placeholder="E-mail"required>
+                        </th>
+                        <th>
+                            <input type="text" id="input_prova_1" placeholder="Prova 1">
+                        </th>
+                        <th>
+                            <input type="text" id="input_prova_integrada_1" placeholder="Prova Integrada 1">
+                        </th>
+                        <th>
+                            <input type="text" id="input_aep_1" placeholder="AEP 1">
+                        </th>
+                        <th>
+                            <input type="text" id="media1" placeholder="Média 1" required>
+                        </th>
+                        <th>
+                            <input type="text" id="input_prova_2" placeholder="Prova 2">
+                        </th>
+                        <th>
+                            <input type="text" id="input_prova_integrada_2" placeholder="Prova Integrada 2">
+                        </th>
+                        <th>
+                            <input type="text" id="input_aep_2" placeholder="AEP 2">
+                        </th>
+                        <td id="media2" placeholder="Média 2">
+                        </td>
+                        <th>
+                            <input type="text" id="mediaFinal" placeholder="Média Final" required>
+                        </th>
+                    </tr>
+
+                    <tbody>
+                        <!-- Aqui serão inseridos dinamicamente os alunos cadastrados -->
+                    </tbody>
+
                 </table>
             </div>
+            <!-- ver essa questão desse botão mudando de lugar -->
             <button type="button" id="adicionaDadosAluno">Adicionar Aluno</button>
-            <button type="button" id="mostraAluno">Mostrar Alunos</button>
+            <!-- <button type="button" id="mostraAluno">Mostrar Alunos</button> -->
         </form>
     </div>
 
