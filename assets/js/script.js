@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const input_prova_integrada_2 = document.getElementById('input_prova_integrada_2');
         const input_aep_2 = document.getElementById('input_aep_2');
 
-        // Calcula as médias dos bimestres
+        // Função calcula as médias dos bimestres
         const mediaBimestral1 = calcularMediaBimestral1(input_prova_1.value, input_aep_1.value, input_prova_integrada_1.value);
         const mediaBimestral2 = calcularMediaBimestral2(input_prova_2.value, input_aep_2.value, input_prova_integrada_2.value);
         const mediaFinal = (mediaBimestral1 + mediaBimestral2) / 2;
@@ -32,12 +32,12 @@ document.addEventListener("DOMContentLoaded", function() {
             prova1: input_prova_1.value,
             integrada1: input_prova_integrada_1.value,
             aep1: input_aep_1.value,
-            media1: mediaBimestral1.toFixed(2), // Limita a 2 casas decimais
+            media1: mediaBimestral1.toFixed(2), // Esssa linha limita a duas casas decimais
             prova2: input_prova_2.value,
             integrada2: input_prova_integrada_2.value,
             aep2: input_aep_2.value,
-            media2: mediaBimestral2.toFixed(2), // Limita a 2 casas decimais
-            mediaFinal: mediaFinal.toFixed(2) // Limita a 2 casas decimais
+            media2: mediaBimestral2.toFixed(2), // Esssa linha limita a duas casas decimais
+            mediaFinal: mediaFinal.toFixed(2) // Esssa linha limita a duas casas decimais
         };
 
         alunos.push(aluno);
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     function adicionaDadosAluno(aluno) {
-        const row = alunosTableBody.insertRow(); // Insere uma nova linha na tabela
+        const row = alunosTableBody.insertRow(); // Linha insere uma nova linha na tabela
         row.innerHTML = `
             <td>${aluno.nome}</td>
             <td>${aluno.ra}</td>
@@ -98,7 +98,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
-
-    // criar método para exibir média
-    // criar colunas para exibição de média
-});
