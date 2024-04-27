@@ -6,3 +6,5 @@ Nome: Lucas Guimarães Pereira
 RA: 24200545-2
 Nome: Thyago Augusto Correa Biagio Silva 
 RA: 24062235-2
+William Pinheiro 
+RA: 23073161-2
