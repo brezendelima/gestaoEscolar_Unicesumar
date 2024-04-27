@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let alunos = [];
 
+    // Carregar dados salvos ao carregar a página
+    carregarDadosSalvos();
+
     adicionaDadosAlunoBtn.addEventListener('click', function() {
         const nomeInput = document.getElementById('input_nome');
         const raInput = document.getElementById('input_ra');
@@ -42,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         alunos.push(aluno);
         adicionaDadosAluno(aluno);
+        salvarDados(); // Salvar os dados ao adicionar um novo aluno
         limparCampos([nomeInput, raInput, emailInput, input_prova_1, input_prova_integrada_1,input_aep_1, input_prova_2, input_prova_integrada_2, input_aep_2]);
     });
 
@@ -71,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function() {
             if (index !== -1) {
                 alunos.splice(index, 1);
                 row.remove();
+                salvarDados(); // Salvar os dados ao remover um aluno
             }
         });
 
@@ -81,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             cell.addEventListener('blur', function() {
                 // Atualizar os dados do aluno quando a edição for concluída
                 aluno[cell.cellIndex] = cell.textContent.trim();
-                console.log(aluno);
+                salvarDados(); // Salvar os dados ao editar um aluno
             });
         });
     }
@@ -106,5 +111,17 @@ document.addEventListener("DOMContentLoaded", function() {
     
         var media2 = ((input_prova_2 * 0.8) + (input_aep_2 * 0.1) + (input_prova_integrada_2 * 0.1));
         return Math.min(Math.max(media2, 0), 10);
+    }
+
+    function salvarDados() {
+        localStorage.setItem('alunos', JSON.stringify(alunos));
+    }
+
+    function carregarDadosSalvos() {
+        const alunosSalvos = JSON.parse(localStorage.getItem('alunos'));
+        if (alunosSalvos) {
+            alunos = alunosSalvos;
+            alunos.forEach(aluno => adicionaDadosAluno(aluno));
+        }
     }
 });
