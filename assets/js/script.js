@@ -73,6 +73,17 @@ document.addEventListener("DOMContentLoaded", function() {
                 row.remove();
             }
         });
+
+        // Permitir edição dos campos diretamente na tabela
+        const cells = row.querySelectorAll('td:not(:last-child)'); // Selecionar todas as células exceto a última
+        cells.forEach(cell => {
+            cell.contentEditable = true;
+            cell.addEventListener('blur', function() {
+                // Atualizar os dados do aluno quando a edição for concluída
+                aluno[cell.cellIndex] = cell.textContent.trim();
+                console.log(aluno);
+            });
+        });
     }
 
     function limparCampos(inputs) {
@@ -97,4 +108,3 @@ document.addEventListener("DOMContentLoaded", function() {
         return Math.min(Math.max(media2, 0), 10);
     }
 });
-
